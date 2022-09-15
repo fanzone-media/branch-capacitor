@@ -304,6 +304,7 @@ public class BranchDeepLinks: CAPPlugin {
             hexInt = UInt32(bitPattern: scanner.scanInt32(representation: .hexadecimal) ?? 0)
         } else {
             hexInt =  0;
-    }
+        }
         return hexInt
+    }
 }
