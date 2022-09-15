@@ -300,7 +300,10 @@ public class BranchDeepLinks: CAPPlugin {
         var hexInt: UInt32 = 0
         let scanner: Scanner = Scanner(string: hexStr)
         scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
-        hexInt = UInt32(bitPattern: scanner.scanInt32(representation: .hexadecimal) ?? 0)
-        return hexInt
+        if #available(iOS 13.0, *) {
+            hexInt = UInt32(bitPattern: scanner.scanInt32(representation: .hexadecimal) ?? 0)
+        } else {
+            hexInt =  0;
     }
+        return hexInt
 }
